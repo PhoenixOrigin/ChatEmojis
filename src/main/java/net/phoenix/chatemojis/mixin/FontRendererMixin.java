@@ -58,7 +58,7 @@ public abstract class FontRendererMixin {
             String emojiKey = matcher.group(1);
             Emoji emoji = ChatEmojis.REGISTRY.get(emojiKey);
             if (emoji != null) {
-                draws.add(new Draw(cursorX, y, emoji, dropShadow));
+                draws.add(new Draw(cursorX, y, emoji));
                 cursorX += (int) ((int) ((8.0f / emoji.getTexHeight()) * emoji.getTexWidth()));
             } else {
                     resetStyles();
@@ -87,7 +87,7 @@ public abstract class FontRendererMixin {
         }
 
         for (Draw draw : draws) {
-            phoenixUtil$drawEmoji(draw.x, draw.y, draw.emoji, false);
+            phoenixUtil$drawEmoji(draw.x, draw.y, draw.emoji);
         }
 
         cir.setReturnValue(cursorX);
@@ -119,7 +119,7 @@ public abstract class FontRendererMixin {
 
 
     @Unique
-    private void phoenixUtil$drawEmoji(float x, float y, Emoji emoji, boolean dropShadow) {
+    private void phoenixUtil$drawEmoji(float x, float y, Emoji emoji) {
         Minecraft mc = Minecraft.getMinecraft();
         ResourceLocation texture = emoji.id.getResourceLocation();
         mc.getTextureManager().bindTexture(texture);
@@ -127,7 +127,7 @@ public abstract class FontRendererMixin {
         float width = emoji.getTexWidth();
         float height = emoji.getTexHeight();
         float scale = 8.0f / height;
-        float brightness = dropShadow ? 0.25f : 1.0f;
+        float brightness = 1.0f;
 
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
