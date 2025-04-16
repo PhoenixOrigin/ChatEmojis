@@ -13,13 +13,15 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: "temurin"
-          java-version: 17
+          java-version: 8
 
-      - name: Gradle build
-        uses: gradle/gradle-build-action@v2
+      - name: Setup Gradle 3.10
+        uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: release-candidate
-          arguments: build
+          gradle-version: '3.1'
+
+      - name: Build 
+        run: gradle build
 
       - uses: actions/upload-artifact@v4
         with:
