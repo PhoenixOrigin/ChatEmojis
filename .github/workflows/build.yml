@@ -18,13 +18,8 @@ jobs:
       - name: Add hosts to /etc/hosts
         run: sudo echo "192.99.194.128 export.mcpbot.bspk.rs" | sudo tee -a /etc/hosts
 
-      - name: Setup Gradle 3.10
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '3.1'
-
       - name: Build 
-        run: gradle build
+        run: ./gradlew build
 
       - uses: actions/upload-artifact@v4
         with:
