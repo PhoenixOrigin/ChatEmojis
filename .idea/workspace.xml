@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f41c3f1d-2158-4237-a416-49cfc9cf0cb7" name="Changes" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/angel_tone3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/arrow_forward.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/artist_tone3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/avocado.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/bearded_person_tone4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/beaver.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/boy_tone1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/call_me_tone3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/call_me_tone4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/closed_book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/construction_worker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/crutch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/dagger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/department_store.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/dress.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/ear_of_rice.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/eight_spoked_asterisk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/family_wwbb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/female_sign.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/flag_al.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/flag_cw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/flag_cx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/flag_do.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/flag_eh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/flag_ic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/flag_mw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/flamingo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/foot_tone2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/frog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/gloves.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/handshake_tone2_tone5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/heavy_division_sign.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/index_pointing_at_the_viewer_tone4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/japanese_goblin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/joy_cat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/kiss_man_man_tone2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/kiss_man_man_tone5_tone1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/leaves.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/lizard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/long_drum.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/love_you_gesture_tone4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/man_artist.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/man_astronaut_tone1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/man_climbing_tone3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/man_golfing_tone1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/man_judge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/man_lifting_weights.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/man_pilot_tone5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/man_red_haired_tone1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/man_shrugging.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/man_swimming_tone3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/man_swimming_tone4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/man_vampire_tone5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/mechanic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/mrs_claus_tone1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/nail_care_tone1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/ok_hand_tone1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/pager.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/pen_ballpoint.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/person_biking_tone2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/person_biking_tone3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/person_lifting_weights.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/person_playing_water_polo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/person_walking_tone5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/person_wearing_turban.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/person_wearing_turban_tone2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/person_wearing_turban_tone5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/placard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/play_pause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/point_down_tone3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/raised_back_of_hand_tone2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/regional_indicator_c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/repeat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/rewind.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/rice_ball.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/satellite_orbital.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/scientist_tone1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/slot_machine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/socks.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/spoon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/tamale.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/umbrella.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/volleyball.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_and_man_holding_hands_tone1_tone2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_climbing_tone4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_climbing_tone5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_factory_worker_tone1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_getting_face_massage_tone4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_getting_haircut_tone2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_mountain_biking_tone5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_raising_hand_tone1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_rowing_boat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_rowing_boat_tone2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_singer_tone3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_student_tone3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/woman_with_headscarf_tone5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/images/women_holding_hands_tone1_tone4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="d1a7a61e-547b-4378-9006-7eff057f6239" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2vnzWS0ZmvkKfz755X2EHW1uMaK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/amogh/IdeaProjects/ChatEmojis/src/main/resources/assets/chatemojis/textures/emojis",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.updates",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\amogh\IdeaProjects\ChatEmojis\src\main\resources\assets\chatemojis\textures\emojis" />
+      <recent name="C:\Users\amogh\IdeaProjects\ChatEmojis\src\main\resources" />
+      <recent name="C:\Users\amogh\IdeaProjects\ChatEmojis\src\main\resources\assets\phoenixutils\textures\emojis" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amogh\IdeaProjects\ChatEmojis\src\main\resources\assets\chatemojis\textures" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="net.phoenix.phoenixutils.chatemojis" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="net.phoenix.chatemojis.util" />
+      <recent name="net.phoenix.phoenixutils.util" />
+      <recent name="net.phoenix.phoenixutils.mixins" />
+      <recent name="net.phoenix.phoenixutils" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.ChatEmojis [build]">
+    <configuration name="ChatEmojis [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ChatEmojis [wr]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="wr" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ChatEmojis [wr]" />
+        <item itemvalue="Gradle.ChatEmojis [build]" />
+        <item itemvalue="Gradle.ChatEmojis [build]" />
+        <item itemvalue="Gradle.ChatEmojis [wr]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f41c3f1d-2158-4237-a416-49cfc9cf0cb7" name="Changes" comment="" />
+      <created>1744795659288</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744795659288</updated>
+      <workItem from="1744795660377" duration="5201000" />
+      <workItem from="1744808422882" duration="4539000" />
+    </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1744800850446</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744800850446</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
