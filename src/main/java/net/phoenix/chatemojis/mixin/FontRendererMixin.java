@@ -63,13 +63,12 @@ public abstract class FontRendererMixin {
             } else {
                     resetStyles();
                     enableAlpha();
-                    int w;
                     if (dropShadow) {
-                        w = renderString(matcher.group(), cursorX + 1, y + 1, color, true);
-                        w = Math.max(w, renderString(matcher.group(), cursorX, y, color, false));
-                    } else w = renderString(matcher.group(), cursorX, y, color, false);
+                        renderString(matcher.group(), cursorX + 1, y + 1, color, true);
+                        renderString(matcher.group(), cursorX, y, color, false);
+                    } else renderString(matcher.group(), cursorX, y, color, false);
 
-                    cursorX += w;
+                    cursorX += ChatEmojis.mc.fontRendererObj.getStringWidth(matcher.group());;
                 }
 
             lastMatchEnd = matcher.end();
