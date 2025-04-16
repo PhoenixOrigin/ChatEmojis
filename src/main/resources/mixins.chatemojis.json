@@ -1,0 +1,11 @@
+{
+  "compatibilityLevel": "JAVA_8",
+    "minVersion": "0.8",
+  "package": "net.phoenix.chatemojis.mixin",
+  "refmap": "refmap.chatemojis.json",
+  "mixins": [],
+  "client": [
+    "FontRendererMixin"
+  ],
+  "server": []
+}
