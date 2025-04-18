@@ -967,6 +967,7 @@ flag_so.png
 flag_sr.png
 flag_ss.png
 flag_st.png
+flag_su.png
 flag_sv.png
 flag_sx.png
 flag_sy.png
