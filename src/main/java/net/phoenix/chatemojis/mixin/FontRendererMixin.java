@@ -65,13 +65,12 @@ public abstract class FontRendererMixin {
                 draws.add(new Draw(cursorX, y, emoji, dropShadow));
                 cursorX += (int) ((int) ((8.0f / emoji.getTexHeight()) * emoji.getTexWidth()));
             } else {
-                System.out.println("Emoji not found: " + emojiKey);
                 AnimatedEmoji animatedEmoji = ChatEmojis.ANIMATED_REGISTRY.get(emojiKey);
                 if(animatedEmoji != null) {
-                    System.out.println("Animated emoji found: " + animatedEmoji.name);
                     animatedDraws.add(new AnimatedDraw(cursorX, y, animatedEmoji, dropShadow));
                     cursorX += (int) ((int) ((8.0f / animatedEmoji.getTexHeight()) * animatedEmoji.getTexWidth()));
                 } else {
+                    System.out.println("e");
                     resetStyles();
                     enableAlpha();
                     int w;
@@ -100,37 +99,53 @@ public abstract class FontRendererMixin {
         }
 
         for (Draw draw : draws) {
-            phoenixUtil$drawEmoji(draw.x, draw.y, draw.emoji, false);
+            phoenixUtil$drawEmoji(draw.x, draw.y, draw.emoji);
         }
         for (AnimatedDraw draw : animatedDraws) {
-            phoenixUtil$drawAnimatedEmoji(draw.x, draw.y, draw.emoji, false);
+            phoenixUtil$drawAnimatedEmoji(draw.x, draw.y, draw.emoji, draw);
         }
 
         cir.setReturnValue(cursorX);
     }
 
     @Unique
-    private void phoenixUtil$drawAnimatedEmoji(float x, float y, AnimatedEmoji emoji, boolean dropShadow) {
-        DynamicTexture frame = emoji.incrementFrame();
+    private void phoenixUtil$drawAnimatedEmoji(float x, float y, AnimatedEmoji emoji, AnimatedDraw draw) {
+        DynamicTexture frame = draw.getCurrentFrame();
         if (frame == null) return;
+        Minecraft.getMinecraft().getTextureManager().bindTexture(ChatEmojis.mc.getTextureManager().getDynamicTextureLocation(emoji.name + draw.index, frame));
 
         float width = emoji.getTexWidth();
         float height = emoji.getTexHeight();
         float scale = 8.0f / height;
-        float brightness = dropShadow ? 0.25f : 1.0f;
-
-        GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-        GlStateManager.depthMask(false);
-        GlStateManager.disableDepth();
-        GL11.glBindTexture(GL11.GL_TEXTURE_2D, frame.getGlTextureId());
+        float brightness = 1.0f;
 
         chatEmojis$render(x, y, width, height, scale, brightness);
     }
 
     @Unique
+    private void phoenixUtil$drawEmoji(float x, float y, Emoji emoji) {
+        Minecraft mc = Minecraft.getMinecraft();
+        ResourceLocation texture = emoji.id.getResourceLocation();
+        mc.getTextureManager().bindTexture(texture);
+
+        float width = emoji.getTexWidth();
+        float height = emoji.getTexHeight();
+        float scale = 8.0f / height;
+        float brightness = 1.0f;
+
+
+        chatEmojis$render(x, y, width, height, scale, brightness);
+
+    }
+
+    @Unique
     private void chatEmojis$render(float x, float y, float width, float height, float scale, float brightness) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GlStateManager.depthMask(false);
+        GlStateManager.disableDepth();
+
         GlStateManager.color(brightness, brightness, brightness, 1.0f);
         GlStateManager.translate(x, y, 0);
         GlStateManager.scale(scale, scale, 1.0f);
@@ -154,25 +169,7 @@ public abstract class FontRendererMixin {
     }
 
 
-    @Unique
-    private void phoenixUtil$drawEmoji(float x, float y, Emoji emoji, boolean dropShadow) {
-        Minecraft mc = Minecraft.getMinecraft();
-        ResourceLocation texture = emoji.id.getResourceLocation();
-        mc.getTextureManager().bindTexture(texture);
 
-        float width = emoji.getTexWidth();
-        float height = emoji.getTexHeight();
-        float scale = 8.0f / height;
-        float brightness = dropShadow ? 0.25f : 1.0f;
-
-        GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-        GlStateManager.depthMask(false);
-        GlStateManager.disableDepth();
-        chatEmojis$render(x, y, width, height, scale, brightness);
-
-    }
 
 
 }

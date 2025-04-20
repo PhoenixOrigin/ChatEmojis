@@ -10,6 +10,7 @@ import net.phoenix.chatemojis.chatemojis.AnimatedEmoji;
 import net.phoenix.chatemojis.chatemojis.Emoji;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -38,13 +39,17 @@ public class ChatEmojis {
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
             String line;
             while ((line = reader.readLine()) != null) {
-                System.out.println("Loading emoji: " + line);
-                ResourceLocation emojiLoc = new ResourceLocation("chatemojis", "textures/emojis/images/" + line);
-                IResource resource = Minecraft.getMinecraft().getResourceManager().getResource(emojiLoc);
-                Emoji emoji = Emoji.fromResource(resource);
-                if (emoji != null) {
-                    String key = line.replace(".png", "");
-                    REGISTRY.put(key, emoji);
+                try {
+                    System.out.println("Loading emoji: " + line);
+                    ResourceLocation emojiLoc = new ResourceLocation("chatemojis", "textures/emojis/images/" + line);
+                    IResource resource = Minecraft.getMinecraft().getResourceManager().getResource(emojiLoc);
+
+                    Emoji emoji = Emoji.fromResource(resource);
+                    if (emoji != null) {
+                        String key = line.replace(".png", "");
+                        REGISTRY.put(key, emoji);
+                    }
+                } catch (FileNotFoundException ignored) {
                 }
             }
             reader.close();
@@ -56,14 +61,13 @@ public class ChatEmojis {
                 System.out.println("Loading animated emoji: " + line);
                 ResourceLocation emojiLoc = new ResourceLocation("chatemojis", "textures/emojis/animated_images/" + line);
                 IResource resource = Minecraft.getMinecraft().getResourceManager().getResource(emojiLoc);
-                System.out.println(emojiLoc.getResourcePath());
-                System.out.println(resource.getResourceLocation().getResourcePath());
                 AnimatedEmoji emoji = AnimatedEmoji.fromResource(resource);
                 if (emoji != null) {
-                    String key = line.replace(".png", "");
+                    String key = line.replace(".gif", "");
                     ANIMATED_REGISTRY.put(key, emoji);
                 }
             }
+            System.out.println(ANIMATED_REGISTRY.keySet());
         } catch (IOException e) {
             e.printStackTrace();
         }

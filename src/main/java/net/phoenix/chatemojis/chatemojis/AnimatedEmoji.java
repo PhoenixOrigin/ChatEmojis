@@ -1,3 +1,4 @@
+
 package net.phoenix.chatemojis.chatemojis;
 
 import com.sun.imageio.plugins.gif.GIFImageReader;
@@ -61,14 +62,11 @@ public class AnimatedEmoji {
         return frames;
     }
 
-    public DynamicTexture incrementFrame() {
-        if (!frames.isEmpty()) {
-            DynamicTexture currentFrame = frames.get(0);
-            frames.remove(0);
-            frames.add(currentFrame);
-            return currentFrame;
+    public DynamicTexture getFrame(int index) {
+        if (index < 0 || index >= frames.size()) {
+            throw new IndexOutOfBoundsException("Index out of bounds: " + index);
         }
-        return null;
+        return frames.get(index);
     }
 
     private static ArrayList<DynamicTexture> register(ArrayList<BufferedImage> frames) throws IOException {
