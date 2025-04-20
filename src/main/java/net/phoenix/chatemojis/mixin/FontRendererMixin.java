@@ -2,6 +2,7 @@ package net.phoenix.chatemojis.mixin;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.util.ResourceLocation;
@@ -20,13 +21,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 @Mixin(FontRenderer.class)
 public abstract class FontRendererMixin {
@@ -42,7 +39,8 @@ public abstract class FontRendererMixin {
     @Shadow
     protected abstract void enableAlpha();
 
-    private HashMap<Float, AnimatedDraw> cachedAnimatedDraws = new HashMap<>();
+    @Unique
+    private final HashMap<Float, AnimatedDraw> chatEmojis$cachedAnimatedDraws = new HashMap<>();
 
     @Inject(method = "drawString(Ljava/lang/String;FFIZ)I", at = @At("HEAD"), cancellable = true)
     public void drawStringInject(String text, float x, float y, int color, boolean dropShadow, CallbackInfoReturnable<Integer> cir) {
@@ -74,10 +72,10 @@ public abstract class FontRendererMixin {
             } else {
                 AnimatedEmoji animatedEmoji = ChatEmojis.ANIMATED_REGISTRY.get(emojiKey);
                 if (animatedEmoji != null) {
-                    if(!cachedAnimatedDraws.containsKey(y)) {
-                        cachedAnimatedDraws.put(y, new AnimatedDraw(cursorX, y, animatedEmoji, dropShadow));
+                    if(!chatEmojis$cachedAnimatedDraws.containsKey(y)) {
+                        chatEmojis$cachedAnimatedDraws.put(y, new AnimatedDraw(cursorX, y, animatedEmoji, dropShadow));
                     }
-                    animatedDraws.add(cachedAnimatedDraws.get(y));
+                    animatedDraws.add(chatEmojis$cachedAnimatedDraws.get(y));
                     cursorX += (int) ((int) ((8.0f / animatedEmoji.getTexHeight()) * animatedEmoji.getTexWidth()));
                 } else {
                     resetStyles();
@@ -93,7 +91,7 @@ public abstract class FontRendererMixin {
             lastMatchEnd = matcher.end();
         }
 
-        cachedAnimatedDraws.entrySet().removeIf(cachedDraw -> !animatedDraws.contains(cachedDraw.getValue()));
+        chatEmojis$cachedAnimatedDraws.entrySet().removeIf(cachedDraw -> !animatedDraws.contains(cachedDraw.getValue()));
 
         if (lastMatchEnd < text.length()) {
             resetStyles();
