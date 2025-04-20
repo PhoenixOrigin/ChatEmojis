@@ -66,7 +66,7 @@ public abstract class FontRendererMixin {
                 cursorX += (int) ((int) ((8.0f / emoji.getTexHeight()) * emoji.getTexWidth()));
             } else {
                 AnimatedEmoji animatedEmoji = ChatEmojis.ANIMATED_REGISTRY.get(emojiKey);
-                if(animatedEmoji != null) {
+                if (animatedEmoji != null) {
                     animatedDraws.add(new AnimatedDraw(cursorX, y, animatedEmoji, dropShadow));
                     cursorX += (int) ((int) ((8.0f / animatedEmoji.getTexHeight()) * animatedEmoji.getTexWidth()));
                 } else {
@@ -167,9 +167,6 @@ public abstract class FontRendererMixin {
         GlStateManager.enableDepth();
         GlStateManager.disableBlend();
     }
-
-
-
 
 
 }

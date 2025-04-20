@@ -1,16 +1,13 @@
-
 package net.phoenix.chatemojis.chatemojis;
 
 import com.sun.imageio.plugins.gif.GIFImageReader;
 import com.sun.imageio.plugins.gif.GIFImageReaderSpi;
 import net.minecraft.client.renderer.texture.DynamicTexture;
-import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.resources.IResource;
 import net.minecraft.util.ResourceLocation;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
@@ -62,13 +59,6 @@ public class AnimatedEmoji {
         return frames;
     }
 
-    public DynamicTexture getFrame(int index) {
-        if (index < 0 || index >= frames.size()) {
-            throw new IndexOutOfBoundsException("Index out of bounds: " + index);
-        }
-        return frames.get(index);
-    }
-
     private static ArrayList<DynamicTexture> register(ArrayList<BufferedImage> frames) throws IOException {
         ArrayList<DynamicTexture> nativeFrames = new ArrayList<>();
 
@@ -78,6 +68,13 @@ public class AnimatedEmoji {
         }
 
         return nativeFrames;
+    }
+
+    public DynamicTexture getFrame(int index) {
+        if (index < 0 || index >= frames.size()) {
+            throw new IndexOutOfBoundsException("Index out of bounds: " + index);
+        }
+        return frames.get(index);
     }
 
     public int getTexWidth() {

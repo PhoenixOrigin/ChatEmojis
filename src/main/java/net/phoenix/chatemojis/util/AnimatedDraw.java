@@ -2,7 +2,6 @@ package net.phoenix.chatemojis.util;
 
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.phoenix.chatemojis.chatemojis.AnimatedEmoji;
-import net.phoenix.chatemojis.chatemojis.Emoji;
 
 public class AnimatedDraw {
     public float x;
