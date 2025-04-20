@@ -19,9 +19,14 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 @Mixin(FontRenderer.class)
 public abstract class FontRendererMixin {
@@ -36,6 +41,8 @@ public abstract class FontRendererMixin {
 
     @Shadow
     protected abstract void enableAlpha();
+
+    private HashMap<Float, AnimatedDraw> cachedAnimatedDraws = new HashMap<>();
 
     @Inject(method = "drawString(Ljava/lang/String;FFIZ)I", at = @At("HEAD"), cancellable = true)
     public void drawStringInject(String text, float x, float y, int color, boolean dropShadow, CallbackInfoReturnable<Integer> cir) {
@@ -67,24 +74,26 @@ public abstract class FontRendererMixin {
             } else {
                 AnimatedEmoji animatedEmoji = ChatEmojis.ANIMATED_REGISTRY.get(emojiKey);
                 if (animatedEmoji != null) {
-                    animatedDraws.add(new AnimatedDraw(cursorX, y, animatedEmoji, dropShadow));
+                    if(!cachedAnimatedDraws.containsKey(y)) {
+                        cachedAnimatedDraws.put(y, new AnimatedDraw(cursorX, y, animatedEmoji, dropShadow));
+                    }
+                    animatedDraws.add(cachedAnimatedDraws.get(y));
                     cursorX += (int) ((int) ((8.0f / animatedEmoji.getTexHeight()) * animatedEmoji.getTexWidth()));
                 } else {
-                    System.out.println("e");
                     resetStyles();
                     enableAlpha();
-                    int w;
                     if (dropShadow) {
-                        w = renderString(matcher.group(), cursorX + 1, y + 1, color, true);
-                        w = Math.max(w, renderString(matcher.group(), cursorX, y, color, false));
-                    } else w = renderString(matcher.group(), cursorX, y, color, false);
-
-                    cursorX += w;
+                        renderString(matcher.group(), cursorX + 1, y + 1, color, true);
+                        renderString(matcher.group(), cursorX, y, color, false);
+                    } else renderString(matcher.group(), cursorX, y, color, false);
+                    cursorX += ChatEmojis.mc.fontRendererObj.getStringWidth(matcher.group());
                 }
             }
 
             lastMatchEnd = matcher.end();
         }
+
+        cachedAnimatedDraws.entrySet().removeIf(cachedDraw -> !animatedDraws.contains(cachedDraw.getValue()));
 
         if (lastMatchEnd < text.length()) {
             resetStyles();

@@ -26,7 +26,7 @@ public class ChatEmojis {
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent event) {
-        System.out.println("ChatEmojis is loading...");
+        System.out.println("Loading ChatEmojis mod");
         mc = Minecraft.getMinecraft();
         registerEmojis();
         MinecraftForge.EVENT_BUS.register(this);
@@ -34,6 +34,7 @@ public class ChatEmojis {
 
     private void registerEmojis() {
         try {
+            System.out.println("Loading default emojis");
             ResourceLocation manifest = new ResourceLocation("chatemojis", "textures/emojis/emoji_manifest.txt");
             InputStream input = Minecraft.getMinecraft().getResourceManager().getResource(manifest).getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
@@ -53,7 +54,7 @@ public class ChatEmojis {
                 }
             }
             reader.close();
-
+            System.out.println("Loading animated emojis");
             manifest = new ResourceLocation("chatemojis", "textures/emojis/animated_images_manifest.txt");
             input = Minecraft.getMinecraft().getResourceManager().getResource(manifest).getInputStream();
             reader = new BufferedReader(new InputStreamReader(input));

@@ -19,7 +19,7 @@ public class AnimatedDraw {
     }
 
     public DynamicTexture getCurrentFrame() {
-        index++;
+        index+=1;
         if (index >= emoji.frames.size()) {
             index = 0;
         }
