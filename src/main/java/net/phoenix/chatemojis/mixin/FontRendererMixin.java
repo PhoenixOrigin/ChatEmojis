@@ -1,16 +1,9 @@
 package net.phoenix.chatemojis.mixin;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.texture.DynamicTexture;
-import net.minecraft.util.ResourceLocation;
 import net.phoenix.chatemojis.ChatEmojis;
-import net.phoenix.chatemojis.chatemojis.AnimatedEmoji;
 import net.phoenix.chatemojis.chatemojis.Emoji;
-import net.phoenix.chatemojis.util.AnimatedDraw;
-import net.phoenix.chatemojis.util.Draw;
 import org.lwjgl.opengl.GL11;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,9 +12,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -39,14 +29,13 @@ public abstract class FontRendererMixin {
     @Shadow
     protected abstract void enableAlpha();
 
-    @Unique
-    private final HashMap<Float, AnimatedDraw> chatEmojis$cachedAnimatedDraws = new HashMap<>();
 
     @Inject(method = "drawString(Ljava/lang/String;FFIZ)I", at = @At("HEAD"), cancellable = true)
     public void drawStringInject(String text, float x, float y, int color, boolean dropShadow, CallbackInfoReturnable<Integer> cir) {
+
         if (!text.contains(":") || !EMOJI_PATTERN.matcher(text).find()) return;
-        List<Draw> draws = new ArrayList<>();
-        List<AnimatedDraw> animatedDraws = new ArrayList<>();
+
+
         int cursorX = (int) x;
         int lastMatchEnd = 0;
         Matcher matcher = EMOJI_PATTERN.matcher(text);
@@ -67,31 +56,27 @@ public abstract class FontRendererMixin {
             String emojiKey = matcher.group(1);
             Emoji emoji = ChatEmojis.REGISTRY.get(emojiKey);
             if (emoji != null) {
-                draws.add(new Draw(cursorX, y, emoji, dropShadow));
-                cursorX += (int) ((int) ((8.0f / emoji.getTexHeight()) * emoji.getTexWidth()));
+                float texWidth = emoji.getTexWidth();
+                float texHeight = emoji.getTexHeight();
+                float scale = 8.0f / texHeight;
+                float brightness = 1.0f;
+
+                emoji.bindTexture(cursorX, (int) y);
+
+                chatEmojis$render(cursorX, y, texWidth, texHeight, scale, brightness);
+
+                cursorX += (int) ((int) ((8.0f / texHeight) * texWidth));
             } else {
-                AnimatedEmoji animatedEmoji = ChatEmojis.ANIMATED_REGISTRY.get(emojiKey);
-                if (animatedEmoji != null) {
-                    if(!chatEmojis$cachedAnimatedDraws.containsKey(y)) {
-                        chatEmojis$cachedAnimatedDraws.put(y, new AnimatedDraw(cursorX, y, animatedEmoji, dropShadow));
-                    }
-                    animatedDraws.add(chatEmojis$cachedAnimatedDraws.get(y));
-                    cursorX += (int) ((int) ((8.0f / animatedEmoji.getTexHeight()) * animatedEmoji.getTexWidth()));
-                } else {
-                    resetStyles();
-                    enableAlpha();
-                    if (dropShadow) {
-                        renderString(matcher.group(), cursorX + 1, y + 1, color, true);
-                        renderString(matcher.group(), cursorX, y, color, false);
-                    } else renderString(matcher.group(), cursorX, y, color, false);
-                    cursorX += ChatEmojis.mc.fontRendererObj.getStringWidth(matcher.group());
-                }
+                String notFoundEmoji = ":" + emojiKey + ":";
+                if (dropShadow) {
+                    renderString(notFoundEmoji, cursorX + 1, y + 1, color, true);
+                    renderString(notFoundEmoji, cursorX, y, color, false);
+                } else renderString(notFoundEmoji, cursorX, y, color, false);
+                cursorX += fontRenderer.getStringWidth(notFoundEmoji);
             }
 
             lastMatchEnd = matcher.end();
         }
-
-        chatEmojis$cachedAnimatedDraws.entrySet().removeIf(cachedDraw -> !animatedDraws.contains(cachedDraw.getValue()));
 
         if (lastMatchEnd < text.length()) {
             resetStyles();
@@ -101,49 +86,12 @@ public abstract class FontRendererMixin {
                 renderString(remaining, cursorX + 1, y + 1, color, true);
                 renderString(remaining, cursorX, y, color, false);
             } else renderString(remaining, cursorX, y, color, false);
-
             cursorX += ChatEmojis.mc.fontRendererObj.getStringWidth(remaining);
-        }
-
-        for (Draw draw : draws) {
-            phoenixUtil$drawEmoji(draw.x, draw.y, draw.emoji);
-        }
-        for (AnimatedDraw draw : animatedDraws) {
-            phoenixUtil$drawAnimatedEmoji(draw.x, draw.y, draw.emoji, draw);
         }
 
         cir.setReturnValue(cursorX);
     }
 
-    @Unique
-    private void phoenixUtil$drawAnimatedEmoji(float x, float y, AnimatedEmoji emoji, AnimatedDraw draw) {
-        DynamicTexture frame = draw.getCurrentFrame();
-        if (frame == null) return;
-        Minecraft.getMinecraft().getTextureManager().bindTexture(ChatEmojis.mc.getTextureManager().getDynamicTextureLocation(emoji.name + draw.index, frame));
-
-        float width = emoji.getTexWidth();
-        float height = emoji.getTexHeight();
-        float scale = 8.0f / height;
-        float brightness = 1.0f;
-
-        chatEmojis$render(x, y, width, height, scale, brightness);
-    }
-
-    @Unique
-    private void phoenixUtil$drawEmoji(float x, float y, Emoji emoji) {
-        Minecraft mc = Minecraft.getMinecraft();
-        ResourceLocation texture = emoji.id.getResourceLocation();
-        mc.getTextureManager().bindTexture(texture);
-
-        float width = emoji.getTexWidth();
-        float height = emoji.getTexHeight();
-        float scale = 8.0f / height;
-        float brightness = 1.0f;
-
-
-        chatEmojis$render(x, y, width, height, scale, brightness);
-
-    }
 
     @Unique
     private void chatEmojis$render(float x, float y, float width, float height, float scale, float brightness) {
