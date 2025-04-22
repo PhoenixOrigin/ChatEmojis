@@ -32,7 +32,7 @@ public class Util {
         List<BufferedImage> frames = new ArrayList<>();
         ImageInputStream imageStream = ImageIO.createImageInputStream(gifFile);
         Iterator<ImageReader> readers = ImageIO.getImageReadersByFormatName("gif");
-        ImageReader gifReader = null;
+        ImageReader gifReader;
         if (readers.hasNext()) {
             gifReader = readers.next();
         } else {

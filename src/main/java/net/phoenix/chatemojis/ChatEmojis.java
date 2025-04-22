@@ -26,8 +26,6 @@ import java.util.Map;
 public class ChatEmojis {
     public static final String MOD_ID = "chatemojis";
     public static final Map<String, Emoji> REGISTRY = new HashMap<>();
-    public static final Map<String, CustomEmoji> CUSTOM_REGISTRY = new HashMap<>();
-    public static final Map<String, CustomAnimatedEmoji> CUSTOM_ANIMATED_REGISTRY = new HashMap<>();
     public static Minecraft mc = null;
 
 
@@ -46,6 +44,7 @@ public class ChatEmojis {
         }
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     private void registerEmojis() {
         try {
             System.out.println("Loading default emojis");

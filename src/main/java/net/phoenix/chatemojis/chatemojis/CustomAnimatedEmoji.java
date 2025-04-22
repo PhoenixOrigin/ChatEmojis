@@ -4,15 +4,11 @@ import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.phoenix.chatemojis.ChatEmojis;
 import net.phoenix.chatemojis.Util;
 
-import javax.imageio.ImageIO;
-import javax.imageio.ImageReader;
-import javax.imageio.stream.ImageInputStream;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 
 
@@ -34,7 +30,6 @@ public class CustomAnimatedEmoji implements Emoji {
     public static CustomAnimatedEmoji fromResource(File gifFile) {
         try {
             List<BufferedImage> frames = Util.getAllFrames(gifFile);
-            List<DynamicTexture> nativeFrames = register(frames);
             BufferedImage first = frames.get(0);
             return new CustomAnimatedEmoji(
                     register(frames),

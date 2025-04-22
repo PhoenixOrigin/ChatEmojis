@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f41c3f1d-2158-4237-a416-49cfc9cf0cb7" name="Changes" comment="custom emoji support, animated emoji support significantly improved, significant code refactoring">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f41c3f1d-2158-4237-a416-49cfc9cf0cb7" name="Changes" comment="more refactoring and version bump">
       <change beforePath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/ChatEmojis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/ChatEmojis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/CustomAnimatedEmoji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/CustomAnimatedEmoji.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/CustomEmoji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/CustomEmoji.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +169,7 @@
       <workItem from="1745263329687" duration="4301000" />
       <workItem from="1745342755832" duration="5538000" />
       <workItem from="1745352100004" duration="5306000" />
-      <workItem from="1745357939915" duration="3679000" />
+      <workItem from="1745357939915" duration="3992000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -206,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745360402185</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="more refactoring and version bump">
+      <option name="closed" value="true" />
+      <created>1745361905531</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745361905531</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,14 +222,15 @@
     <MESSAGE value="fixing a glitch" />
     <MESSAGE value="small formatting change" />
     <MESSAGE value="custom emoji support, animated emoji support significantly improved, significant code refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="custom emoji support, animated emoji support significantly improved, significant code refactoring" />
+    <MESSAGE value="more refactoring and version bump" />
+    <option name="LAST_COMMIT_MESSAGE" value="more refactoring and version bump" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/CustomAnimatedEmoji.java</url>
-          <line>18</line>
+          <line>14</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
