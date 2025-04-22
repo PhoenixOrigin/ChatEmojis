@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f41c3f1d-2158-4237-a416-49cfc9cf0cb7" name="Changes" comment="small formatting change">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/CustomAnimatedEmoji.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/CustomEmoji.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/DefaultEmoji.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f41c3f1d-2158-4237-a416-49cfc9cf0cb7" name="Changes" comment="custom emoji support, animated emoji support significantly improved, significant code refactoring">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/Util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/ChatEmojis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/ChatEmojis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/AnimatedEmoji.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/Emoji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/Emoji.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/mixin/FontRendererMixin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/mixin/FontRendererMixin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/util/AnimatedDraw.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/util/Draw.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/animated_images/despairsnap.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/chatemojis/textures/emojis/animated_images_manifest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/CustomAnimatedEmoji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/CustomAnimatedEmoji.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/CustomEmoji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/CustomEmoji.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -181,7 +172,7 @@
       <workItem from="1745263329687" duration="4301000" />
       <workItem from="1745342755832" duration="5538000" />
       <workItem from="1745352100004" duration="5306000" />
-      <workItem from="1745357939915" duration="2421000" />
+      <workItem from="1745357939915" duration="3679000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -207,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745159076524</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="custom emoji support, animated emoji support significantly improved, significant code refactoring">
+      <option name="closed" value="true" />
+      <created>1745360402185</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745360402185</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,14 +216,15 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="fixing a glitch" />
     <MESSAGE value="small formatting change" />
-    <option name="LAST_COMMIT_MESSAGE" value="small formatting change" />
+    <MESSAGE value="custom emoji support, animated emoji support significantly improved, significant code refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom emoji support, animated emoji support significantly improved, significant code refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/net/phoenix/chatemojis/chatemojis/CustomAnimatedEmoji.java</url>
-          <line>17</line>
+          <line>18</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

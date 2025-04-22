@@ -2,6 +2,7 @@ package net.phoenix.chatemojis.chatemojis;
 
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.phoenix.chatemojis.ChatEmojis;
+import net.phoenix.chatemojis.Util;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
@@ -30,28 +31,9 @@ public class CustomAnimatedEmoji implements Emoji {
         this.texWidth = texWidth;
     }
 
-    public static List<BufferedImage> getAllFrames(File gifFile) throws IOException {
-        List<BufferedImage> frames = new ArrayList<>();
-        ImageInputStream imageStream = ImageIO.createImageInputStream(gifFile);
-        Iterator<ImageReader> readers = ImageIO.getImageReadersByFormatName("gif");
-        ImageReader gifReader = null;
-        if (readers.hasNext()) {
-            gifReader = readers.next();
-        } else {
-            throw new IOException("No suitable ImageReader found for GIF format.");
-        }
-        gifReader.setInput(imageStream);
-        int frameCount = gifReader.getNumImages(true);
-        for (int i = 0; i < frameCount; i++) {
-            BufferedImage frame = gifReader.read(i);
-            frames.add(frame);
-        }
-        return frames;
-    }
-
     public static CustomAnimatedEmoji fromResource(File gifFile) {
         try {
-            List<BufferedImage> frames = getAllFrames(gifFile);
+            List<BufferedImage> frames = Util.getAllFrames(gifFile);
             List<DynamicTexture> nativeFrames = register(frames);
             BufferedImage first = frames.get(0);
             return new CustomAnimatedEmoji(

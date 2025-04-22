@@ -3,6 +3,7 @@ package net.phoenix.chatemojis.chatemojis;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.phoenix.chatemojis.ChatEmojis;
+import net.phoenix.chatemojis.Util;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -24,8 +25,9 @@ public class CustomEmoji implements Emoji {
 
     public static CustomEmoji fromResource(File file) throws IOException {
         BufferedImage image = ImageIO.read(file);
+        if (image == null) return null;
         DynamicTexture dynamicTexture = new DynamicTexture(image);
-        String name = file.getName().replace(".png", "");
+        String name = Util.removeExtension(file.getName());
         return new CustomEmoji(dynamicTexture, name, image.getWidth(), image.getHeight());
     }
 

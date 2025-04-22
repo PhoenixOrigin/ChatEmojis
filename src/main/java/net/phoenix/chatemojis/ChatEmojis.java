@@ -49,20 +49,14 @@ public class ChatEmojis {
     private void registerEmojis() {
         try {
             System.out.println("Loading default emojis");
-
             ResourceLocation manifest = new ResourceLocation("chatemojis", "textures/emojis/emoji_manifest.txt");
-
             InputStream input = mc.getResourceManager().getResource(manifest).getInputStream();
-
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-
             String line;
-
             while ((line = reader.readLine()) != null) {
                 try {
                     ResourceLocation emojiLoc = new ResourceLocation("chatemojis", "textures/emojis/images/" + line);
                     IResource resource = mc.getResourceManager().getResource(emojiLoc);
-
                     DefaultEmoji emoji = DefaultEmoji.fromResource(resource);
                     if (emoji != null) {
                         String key = line.replace(".png", "");
@@ -72,22 +66,22 @@ public class ChatEmojis {
                 }
             }
             reader.close();
-
-
             File emojiFolder = new File(Minecraft.getMinecraft().mcDataDir, "chatemojis");
             emojiFolder.mkdirs();
-
-
             File[] files = emojiFolder.listFiles();
-
             if (files != null) {
                 for (File file : files) {
-                    if (file.isFile() && file.getName().endsWith(".png")) {
-                        System.out.println("Loading custom emoji: " + file.getName());
-                        REGISTRY.put(file.getName().replace(".png", ""), CustomEmoji.fromResource(file));
-                    } else if (file.isFile() && file.getName().endsWith(".gif")) {
+                    if (file.isFile() && file.getName().endsWith(".gif")) {
                         System.out.println("Loading custom animated emoji: " + file.getName());
-                        REGISTRY.put(file.getName().replace(".gif", ""), CustomAnimatedEmoji.fromResource(file));
+                        REGISTRY.put(Util.removeExtension(file.getName()), CustomAnimatedEmoji.fromResource(file));
+                    } else {
+                        System.out.println("Attempting to load file: " + file.getName());
+                        CustomEmoji customEmoji = CustomEmoji.fromResource(file);
+                        if (customEmoji == null) {
+                            System.out.println("Couldn't load file: " + file.getName());
+                            continue;
+                        }
+                        REGISTRY.put(Util.removeExtension(file.getName()), customEmoji);
                     }
                 }
             }
